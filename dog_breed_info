@@ -1,0 +1,42 @@
+class pomeranian:
+    def __init__(self, name, low_end_height, high_end_height, low_end_weight, high_end_weight, low_end_cost, high_end_cost, low_end_lifespan, high_end_lifespan):
+        self.name = name
+        self.low_end_height = low_end_height
+        self.high_end_height = high_end_height
+        self.low_end_weight = low_end_weight
+        self.high_end_weight = high_end_weight
+        self.low_end_cost = low_end_cost
+        self.high_end_cost = high_end_cost
+        self.low_end_lifespan = low_end_lifespan
+        self.high_end_lifespan = high_end_lifespan
+
+dog_selection = str(input("Enter breed of dog: "))
+
+def dog_selection_check():
+    if dog_selection == "pomeranian":
+        return True    
+    elif dog_selection == "Pomeranian":
+        return True
+    elif dog_selection != "pomeranian":
+        return False
+
+dog_selection_check()
+pomeranian = pomeranian("pomeranian", "18cm", "31cm", "1.9kg", "3.5kg", "$1000", "$3000", "12 years", "16 years")
+if dog_selection_check() == True:
+    attr = str(pomeranian.__dict__)
+    x = attr.replace("{", " ")
+    y = x.replace("}", "")
+    z = y.replace("'", "")
+    a = z.replace("_", " ")
+    a = a.split(",")
+    n = 0
+    for n in range (0,9):
+        print (a[n])
+        n += 1
+        if n == 8:
+            print (a[n])
+            break
+        else:
+            pass
+else:
+    print ("hdu")
